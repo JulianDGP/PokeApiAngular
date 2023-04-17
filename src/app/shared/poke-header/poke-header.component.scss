@@ -1,0 +1,21 @@
+@use '../../../../node_modules/bootstrap/scss/bootstrap.scss';
+:host{
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2% 2%;
+        button{
+            font-size: 125%;
+        }
+        p{
+            color: white;
+            font-size: 500%;
+        }
+        img{
+            max-width: 7%;
+            margin-right: 0.5%;
+        }
+        
+    }
+}
