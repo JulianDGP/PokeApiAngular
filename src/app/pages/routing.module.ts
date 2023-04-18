@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 //Components
 import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
+import { AuthGuard } from '@auth0/auth0-angular';
 
 const routes: Routes = [
   {
@@ -11,8 +12,10 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'detail',
-    component: DetailsComponent
+    path: 'details/:id',
+    component: DetailsComponent,
+    canActivate: [AuthGuard],
+    data: { requiresLogin: true },
   }
 ];
 
@@ -20,4 +23,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class RoutingModule { }
+export class RoutingModule { 
+}
